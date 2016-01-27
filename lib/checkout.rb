@@ -8,13 +8,10 @@ class Checkout
   end
 
   def total
+    sum = PromotionalRules::TwoLavenderHearts.run(items)
     PromotionalRules::TenPercentOff.run(sum)
   end
 
   private
   attr_reader :items
-
-  def sum
-    items.map(&:price).inject(:+)
-  end
 end
