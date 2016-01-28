@@ -11,21 +11,21 @@ describe Checkout do
     context 'total above £60' do
       let(:basket) { [item1, item2, item3] }
       it 'applies 10% off' do
-        expect(subject.total).to eq(66.78)
+        expect(subject.total).to eq("£66.78")
       end
     end
 
     context 'two lavender hearts' do
       let(:basket) { [item1, item3, item1] }
       it 'applies discount to lavender hearts' do
-        expect(subject.total).to eq(36.95)
+        expect(subject.total).to eq("£36.95")
       end
     end
 
     context 'two lavender hearts and over £60' do
       let(:basket) { [item1, item2, item1, item3] }
       it 'applies both discounts' do
-        expect(subject.total).to eq(73.76)
+        expect(subject.total).to eq("£73.76")
       end
     end
   end

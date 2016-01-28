@@ -12,7 +12,7 @@ module PromotionalRules
 
         it 'takes 10% off total' do
           subject.run(checkout)
-          expect(checkout.total).to eq(66.78)
+          expect(checkout.total).to eq("£66.78")
         end
       end
 
@@ -21,7 +21,7 @@ module PromotionalRules
 
         it 'does nothing' do
           subject.run(checkout)
-          expect(checkout.total).to eq(59.99)
+          expect(checkout.total).to eq("£59.99")
         end
       end
     end

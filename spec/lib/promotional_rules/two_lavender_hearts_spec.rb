@@ -15,7 +15,7 @@ module PromotionalRules
 
         it 'reduces price to 8.50' do
           subject.run(checkout)
-          expect(checkout.total).to eq 17
+          expect(checkout.total).to eq "£17.00"
         end
       end
 
@@ -24,7 +24,7 @@ module PromotionalRules
 
         it 'reduces price to 8.50' do
           subject.run(checkout)
-          expect(checkout.total).to eq 25.50
+          expect(checkout.total).to eq "£25.50"
         end
       end
 
@@ -33,7 +33,7 @@ module PromotionalRules
 
         it 'does not touch price' do
           subject.run(checkout)
-          expect(checkout.total).to eq 9.25
+          expect(checkout.total).to eq "£9.25"
         end
       end
 
@@ -42,7 +42,7 @@ module PromotionalRules
 
         it 'only effects price of lavender hearts' do
           subject.run(checkout)
-          expect(checkout.total).to eq 36.95
+          expect(checkout.total).to eq "£36.95"
         end
       end
     end

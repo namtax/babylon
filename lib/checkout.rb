@@ -13,17 +13,17 @@
 
   def total
     rules.each { |r| r.run(self) }
-    (sum * (1 - discount)).round(2)
-  end
-
-  def line_items
-    @line_items ||= build_line_items
+    Money.new(discount_sum).to_pounds
   end
 
   def sum
     line_items.values
       .map{ |i| i.total_price }
       .inject(:+)
+  end
+
+  def line_items
+    @line_items ||= build_line_items
   end
 
   def fetch_item_quantity(product)
@@ -42,5 +42,9 @@
       hash[i.first.name] = LineItem.new(i)
       hash
     end
+  end
+
+  def discount_sum
+    sum * (1 - discount)
   end
 end
