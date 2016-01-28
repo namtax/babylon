@@ -1,12 +1,12 @@
 class LineItem
+  attr_accessor :price, :quantity
+
   def initialize(input)
-    @input = input.last
+    @price    = input.first.price
+    @quantity = input.last
   end
 
   def total_price
-    input[:price] * input[:total]
+    price * quantity
   end
-
-  private
-  attr_reader :input
 end

@@ -1,4 +1,4 @@
-class Checkout
+  class Checkout
   attr_accessor :discount, :totals
 
   def initialize(promotional_rules = [])
@@ -21,7 +21,17 @@ class Checkout
   end
 
   def sum
-    line_items.values.map{ |i| i[:price] * i[:total] }.inject(:+)
+    line_items.values
+      .map{ |i| i.total_price }
+      .inject(:+)
+  end
+
+  def fetch_item_quantity(product)
+    line_items[product].quantity
+  end
+
+  def adjust_item_price(product, price)
+    line_items[product].price = price
   end
 
   private
@@ -29,7 +39,7 @@ class Checkout
 
   def build_line_items
     totals.reduce({}) do |hash, i|
-      hash[i.first.name] = { price: i.first.price, total: i.last }
+      hash[i.first.name] = LineItem.new(i)
       hash
     end
   end

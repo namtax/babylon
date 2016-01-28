@@ -13,11 +13,6 @@ class Product
     @all ||= []
   end
 
-  def self.where(opts)
-    property, value = *opts.first
-    all.detect{ |a| a.code == LAVENDER_HEART_CODE }
-  end
-
   def initialize(input)
     @code  = input[:code]
     @name  = input[:name]
