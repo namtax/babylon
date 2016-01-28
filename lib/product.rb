@@ -4,13 +4,7 @@ class Product
   LAVENDER_HEART_CODE = 001
 
   def self.create(input)
-    object = new(input)
-    all << object
-    object
-  end
-
-  def self.all
-    @all ||= []
+    new(input)
   end
 
   def initialize(input)
