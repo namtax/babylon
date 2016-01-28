@@ -3,11 +3,9 @@ module PromotionalRules
     THRESHOLD = 60
     DISCOUNT  = 0.10
 
-    def self.run(amount)
-      if amount > THRESHOLD
-        amount - (amount * DISCOUNT)
-      else
-        amount
+    def self.run(checkout)
+      if checkout.sum > THRESHOLD
+        checkout.discount = DISCOUNT
       end
     end
   end

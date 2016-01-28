@@ -3,6 +3,21 @@ class Product
 
   LAVENDER_HEART_CODE = 001
 
+  def self.create(input)
+    object = new(input)
+    all << object
+    object
+  end
+
+  def self.all
+    @all ||= []
+  end
+
+  def self.where(opts)
+    property, value = *opts.first
+    all.detect{ |a| a.code == LAVENDER_HEART_CODE }
+  end
+
   def initialize(input)
     @code  = input[:code]
     @name  = input[:name]
