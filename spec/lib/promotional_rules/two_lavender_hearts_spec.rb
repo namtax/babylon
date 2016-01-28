@@ -8,7 +8,7 @@ module PromotionalRules
       let(:item3)    { Product.new(code: 003, name: 'Kids T-shirt', price: 19.95) }
       let(:checkout) { Checkout.new }
 
-      before         { basket.each { |b| checkout.scan(b) }
+      before         { basket.each { |b| checkout.scan(b) } }
 
       context 'two lavender hearts' do
         let(:basket) { [item1, item1] }
