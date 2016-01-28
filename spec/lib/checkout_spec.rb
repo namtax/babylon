@@ -28,5 +28,13 @@ describe Checkout do
         expect(subject.total).to eq("£73.76")
       end
     end
+
+    context 'no rules' do
+      let(:rules)  { [] }
+      let(:basket) { [item1, item2, item3] }
+      it 'does nothing' do
+        expect(subject.total).to eq("£74.20")
+      end
+    end
   end
 end
