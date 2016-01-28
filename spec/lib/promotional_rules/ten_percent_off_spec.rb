@@ -2,7 +2,7 @@ module PromotionalRules
   describe TenPercentOff do
     subject        { described_class }
     let(:checkout) { Checkout.new }
-    let(:item)     { Product.create(code: 010, name: 'Bag', price: price) }
+    let(:item)     { Product.create(code: '010', name: 'Bag', price: price) }
 
     describe '#run' do
       before { checkout.scan(item) }

@@ -3,9 +3,9 @@ module PromotionalRules
     subject { described_class }
 
     describe '.run' do
-      let(:item1)    { Product.new(code: 001, name: 'Lavender Heart', price: 9.25) }
-      let(:item2)    { Product.new(code: 002, name: 'Personalised cufflinks', price: 45.00) }
-      let(:item3)    { Product.new(code: 003, name: 'Kids T-shirt', price: 19.95) }
+      let(:item1)    { Product.new(code: '001', name: 'Lavender Heart', price: 9.25) }
+      let(:item2)    { Product.new(code: '002', name: 'Personalised cufflinks', price: 45.00) }
+      let(:item3)    { Product.new(code: '003', name: 'Kids T-shirt', price: 19.95) }
       let(:checkout) { Checkout.new }
 
       before         { basket.each { |b| checkout.scan(b) } }

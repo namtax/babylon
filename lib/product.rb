@@ -18,8 +18,4 @@ class Product
     @name  = input[:name]
     @price = input[:price]
   end
-
-  def lavender_heart?
-    code == LAVENDER_HEART_CODE
-  end
 end

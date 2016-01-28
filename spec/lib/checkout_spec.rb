@@ -1,9 +1,9 @@
 describe Checkout do
   subject     { described_class.new(rules) }
   let(:rules) { [PromotionalRules::TwoLavenderHearts, PromotionalRules::TenPercentOff] }
-  let(:item1) { Product.create(code: 001, name: 'Lavender Heart', price: 9.25) }
-  let(:item2) { Product.create(code: 002, name: 'Personalised cufflinks', price: 45.00) }
-  let(:item3) { Product.create(code: 003, name: 'Kids T-shirt', price: 19.95) }
+  let(:item1) { Product.create(code: '001', name: 'Lavender Heart', price: 9.25) }
+  let(:item2) { Product.create(code: '002', name: 'Personalised cufflinks', price: 45.00) }
+  let(:item3) { Product.create(code: '003', name: 'Kids T-shirt', price: 19.95) }
 
   before      { basket.each { |b| subject.scan(b) } }
 

@@ -39,7 +39,7 @@
 
   def build_line_items
     totals.reduce({}) do |hash, i|
-      hash[i.first.name] = LineItem.new(i)
+      hash[i.first.code] = LineItem.new(i)
       hash
     end
   end

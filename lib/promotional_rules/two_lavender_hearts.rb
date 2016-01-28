@@ -1,7 +1,7 @@
 module PromotionalRules
   class TwoLavenderHearts
     THRESHOLD = 2
-    PRODUCT_NAME = 'Lavender Heart'
+    PRODUCT_CODE = '001'
     DISOUNT = 8.50
 
     def self.run(checkout)
@@ -11,11 +11,11 @@ module PromotionalRules
     end
 
     def self.threshold_met?(checkout)
-      checkout.fetch_item_quantity(PRODUCT_NAME) >= THRESHOLD
+      checkout.fetch_item_quantity(PRODUCT_CODE) >= THRESHOLD
     end
 
     def self.adjust_price(checkout)
-      checkout.adjust_item_price(PRODUCT_NAME, DISOUNT)
+      checkout.adjust_item_price(PRODUCT_CODE, DISOUNT)
     end
   end
 end
