@@ -1,7 +1,2 @@
 require 'pry'
-require 'checkout'
-require 'product'
-require 'promotional_rules/ten_percent_off'
-require 'promotional_rules/two_lavender_hearts'
-require 'line_item'
-require 'money'
+require 'babylon'
